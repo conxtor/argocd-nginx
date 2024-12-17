@@ -2,14 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  namespace: argo-demo
+  namespace: argo-demo # Ensure this namespace matches the Argo CD application
   annotations:
-    # Use Traefik entrypoints for TLS
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    # Enable TLS termination
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    # Set ClusterIssuer for Let's Encrypt
-    cert-manager.io/cluster-issuer: "letsencrypt"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   tls:
     - hosts:
