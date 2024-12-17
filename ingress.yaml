@@ -5,7 +5,7 @@ metadata:
   namespace: argo-demo # Ensure this namespace matches the Argo CD application
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
   tls:
     - hosts:
